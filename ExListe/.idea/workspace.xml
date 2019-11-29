@@ -36,7 +36,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Test" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="8088">
+    <configuration name="Test" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="8080">
       <method v="2" />
     </configuration>
     <configuration default="true" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="8080">
@@ -56,7 +56,7 @@
       <workItem from="1574938755399" duration="406000" />
       <workItem from="1574939185613" duration="353000" />
       <workItem from="1574939592700" duration="125000" />
-      <workItem from="1575030776401" duration="859000" />
+      <workItem from="1575030776401" duration="1688000" />
     </task>
     <servers />
   </component>
