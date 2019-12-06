@@ -39,20 +39,38 @@
 <div class="month">
     <ul>
         <?php
-            echo "December";
+        $day = time();
+        //$day = $_GET["day"];
+        //$day = intval($day);
+        //$day = 7;
+        $month = $_GET["month"];
+        $year = $_GET["year"];
+        echo "<li>";
+        echo "$month";
+        echo "<br>";
+        echo "$year";
+        echo "</li>";
         ?>
     </ul>
 </div>
 <ul class="weekdays">
     <?php
-        $days = array("Lundi","Mardi","Mercredi","jeudi","Vendredi","Samedi","Dimanche");
-        for($i=0;$i<7;$i++){
-            echo "<li>$days[$i]</li>";
-        }
+    $days = array("Lundi", "Mardi", "Mercredi", "jeudi", "Vendredi", "Samedi", "Dimanche");
+    for ($i = 0; $i < 7; $i++) {
+        echo "<li>$days[$i]</li>";
+    }
     ?>
 </ul>
 <ul class="days">
     <?php
+    for ($i = 1; $i <= 31; $i++) {
+        echo "<li>";
+        if($i == date("j",$day)){
+            echo '<span class="active">';
+        }
+        echo "$i</li>";
+    }
+
 
     ?>
 </ul>
