@@ -65,13 +65,56 @@
     <?php
     for ($i = 1; $i <= 31; $i++) {
         echo "<li>";
-        if($i == date("j",$day)){
+        if ($i == date("j", $day)) {
             echo '<span class="active">';
         }
         echo "$i</li>";
     }
+    ?>
+</ul>
 
+<!--Nouveau-->
 
+<div class="month">
+    <ul>
+        <?php
+        $day = time();
+        //$day = $_GET["day"];
+        //$day = intval($day);
+        //$day = 7;
+        $month = $_GET["month"];
+        $year = $_GET["year"];
+        echo "<li>";
+        echo "$month";
+        echo "<br>";
+        echo "$year";
+        echo "</li>";
+        ?>
+    </ul>
+</div>
+<ul class="weekdays">
+    <?php
+    $days = array("Lundi", "Mardi", "Mercredi", "jeudi", "Vendredi", "Samedi", "Dimanche");
+    for ($i = 0; $i < 7; $i++) {
+        echo "<li>$days[$i]</li>";
+    }
+    ?>
+</ul>
+<ul class="days">
+    <?php
+    $weekDay = date("N", strtotime("first day of this month"));
+    $prev = date("d", strtotime("last day of last month", strtotime("now")));
+
+    for ($i = $prev - $weekDay + 2; $i <= $prev; $i++) {
+        echo "<li>$i</li>";
+    }
+    for ($i = 1; $i <= 31; $i++) {
+        echo "<li>";
+        if ($i == date("j", $day)) {
+            echo '<span class="active">';
+        }
+        echo "$i</li>";
+    }
     ?>
 </ul>
 </body>
