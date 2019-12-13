@@ -10,6 +10,7 @@
 <div class="month">
     <ul>
         <?php
+        //Ne pas oublier le _POST pour cacher les info
         $now = time();
         $month = $_GET["month"];
         $month +=0;
@@ -47,9 +48,13 @@
         }
         echo "$i</li>";
     }
-    if($prev - $FirstWeekDay + 2 <= 31) {
+    // Donner une solution commune pour 2020-10 et 2015-6
+    /*if($prev - $FirstWeekDay + 2 <= 31) {
         $LastWeekDay +=1;
     }
+    else if(){
+
+    }*/
     for ($i = 1; $i <= 7 - $LastWeekDay; $i++) {
         echo "<li><span class='gray'>$i</li>";
     }
