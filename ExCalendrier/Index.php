@@ -3,23 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Calendrier</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/Style.css">
 </head>
 <body>
+
+<form action="Index.php" method="get">
+  <select name="month">
+  <?php
+  $monthList = array("Janvier","Fevrier","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Decembre");
+  for ($i=1; $i <= count($monthList); $i++) {
+    echo "<option value='$i'>".$monthList[$i-1]."</option>";
+  }
+  ?>
+ </select>
+  <input type="number" name="year" min="1">
+  <input type="submit" value="GO">
+</form>
+
+<form action="Index.php" method="get">
+  <input value="<?php echo date("m",strtotime("now"))?>" name="month" hidden>
+  <input value="<?php echo date("Y",strtotime("now"))?>" name="year" hidden>
+  <input type="submit" value="Ajourd'hui">
+</form>
 
 <div class="month">
     <ul>
         <?php
         //Ne pas oublier le _POST pour cacher les info
-        $now = time();
         $month = $_GET["month"];
         $month +=0;
         $year = $_GET["year"];
         $date = strtotime("$year-$month");
         echo "<li>";
-        echo date("M",$date);
+        echo date("F",$date);
         echo "<br>";
-        echo "$year";
+        echo date("Y",$date);
         echo "</li>";
         ?>
     </ul>
@@ -41,20 +59,13 @@
     for ($i = $prev - $FirstWeekDay + 2; $i <= $prev; $i++) {
         echo "<li><span class='gray'>$i</li>";
     }
-    for ($i = 1; $i <= 31; $i++) {
+    for ($i = 1; $i <= date("j", strtotime("last day of this month",$date)); $i++) {
         echo "<li>";
         if ($i == date("j", strtotime("now")) && $year == date("Y",strtotime("now")) && $month == date("m",strtotime("now"))) {
             echo '<span class="active">';
         }
         echo "$i</li>";
     }
-    // Donner une solution commune pour 2020-10 et 2015-6
-    /*if($prev - $FirstWeekDay + 2 <= 31) {
-        $LastWeekDay +=1;
-    }
-    else if(){
-
-    }*/
     for ($i = 1; $i <= 7 - $LastWeekDay; $i++) {
         echo "<li><span class='gray'>$i</li>";
     }
