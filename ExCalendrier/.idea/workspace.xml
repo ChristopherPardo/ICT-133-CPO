@@ -28,7 +28,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MVC" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RunDashboard">
@@ -66,6 +66,7 @@
       <workItem from="1576240355645" duration="5296000" />
       <workItem from="1576245687719" duration="163000" />
       <workItem from="1576748470388" duration="686000" />
+      <workItem from="1576845081351" duration="20000" />
     </task>
     <servers />
   </component>
