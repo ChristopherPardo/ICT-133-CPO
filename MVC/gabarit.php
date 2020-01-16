@@ -10,7 +10,7 @@
 </head>
 <body>
 <header class="text-center">
-    <a href="?"><img src="images/CPNVinfo.png" width="100px"></a>
+    <a href="?action=home"><img src="images/CPNVinfo.png" width="100px"></a>
 </header>
 <div class="container">
     <?= $content ?>

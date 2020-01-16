@@ -16,4 +16,10 @@ function showConcerts(){
 
     require_once "view/concerts.php";
 }
+/*function pageNotGet($action){
+  if($action == ""){
+    $action = "home";
+  }
+  //require_once "index.php";
+}*/
 ?>
